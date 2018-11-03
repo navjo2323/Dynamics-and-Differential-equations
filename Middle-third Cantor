@@ -1,0 +1,12 @@
+%Code for generating middle third cantor set using  probabilistic iterated function system
+N = 100000;
+x = rand(N,1);
+for j = 1:1000
+    probab = ceil(rand(N,1)*2);
+    p1 = (probab==1);
+    p2 = (probab==2);
+    x = (x/3).*p1 + (x/3 + 2/3).*p2;
+    
+end
+plot(x,zeros(N,1),'.')
+hold all
